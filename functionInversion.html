@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Đảo chuỗi</title>
 </head>
 <body>
+<script>
+    let n = +prompt("Nhập vào số phần tử của mảng:");
+    let i;
+    let arrNum=[];
+    for(i=0;i<n;i++)
+    {
+        arrNum.push( Math.floor(Math.random()*n));
+        document.write(arrNum[i]+' ;');
+    }
+
+    document.write('<br>');
+
+    function functionInversion(arr)
+    {
+        for (i = arr.length-1; i >= 0; i--) {
+            document.write(arr[i] + ' ;');
+        }
+        return arr;
+    }
+       functionInversion(arrNum)
+</script>
 
 </body>
 </html>
