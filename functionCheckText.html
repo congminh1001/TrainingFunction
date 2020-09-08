@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Text</title>
+</head>
+<body>
+<script>
+    let n=prompt('Nhập vào giá trị bạn muốn kiểm tra:');
+    arr=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','I','F','G','H','I','J','K','L','N','M','O','P','Q','R','S','T','U','V','W','X','W','Z'];
+
+    function checkText(n,arr)
+    {
+        let count =0;
+        for ( let i=0;i<arr.length;i++)
+        {
+            if(n==arr[i])
+            {
+                document.write("Phần tử nhập vào là ký tự.");
+                break;
+            }
+            else
+            {
+                count++;
+            }
+        }
+        if(count==arr.length)
+        {
+            document.write("Phan tu nhap vap khong phai la ky tu");
+        }
+    }
+    checkText(n,arr)
+</script>
+</body>
+</html>
