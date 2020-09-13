@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper, or Scissors</title>
+</head>
+<body>
+<script>
+     userInput=prompt('rock/paper/scissors');
+    const getUserChoice = userInput =>
+    {
+        userInput = userInput.toLowerCase();
+        if(userInput==='rock'||userInput==='paper'||userInput==='scissors')
+        {
+            return userInput;
+        }
+    };
+
+    const getComputerChoice=() =>
+    {
+        let choice = Math.floor(Math.random()*3);
+        switch(choice)
+        {
+            case 0:
+                return 'rock';
+                break;
+            case 1:
+                return 'paper';
+                break;
+            case 2:
+                return 'scissors';
+                break;
+        }
+    };
+
+    document.write('<br>');
+    let userChoice=getUserChoice(userInput);
+    let computerChoice=getComputerChoice();
+    document.write(userChoice);
+    document.write('<br>');
+    document.write(computerChoice);
+    function determinteTie(userChoice, computerChoice)
+    {
+        if(userChoice===computerChoice)
+        {
+            document.write('tie');
+        }
+    }
+
+    function determinteWinner(userChoice, computerChoice)
+    {
+
+        if(userChoice==='rock'&&computerChoice==='paper')
+        {
+            document.write('Computer Win');
+        }
+        else if(userChoice==='rock'&&computerChoice==='scissors')
+        {
+            document.write('User Win');
+        }
+        else if(userChoice==='paper'&&computerChoice==='rock')
+        {
+            document.write('User Win');
+        }
+        else if(userChoice==='paper'&&computerChoice==='scissors')
+        {
+            document.write('Computer Win');
+        }
+        else if(userChoice==='scissors'&&computerChoice==='rock')
+        {
+            document.write('Computer Win');
+        }
+        else if(userChoice==='scissors'&&computerChoice==='paper')
+        {
+            document.write('User Win');
+        }
+    }
+
+    document.write('<br>');
+    console.log(determinteTie(userChoice,computerChoice));
+    console.log(determinteWinner(userChoice, computerChoice));
+
+</script>
+</body>
+</html>
