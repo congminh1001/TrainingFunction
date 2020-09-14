@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PlusMinus</title>
+</head>
+<body>
+<script>
+    arr=[2,3,4,-2,-4,-2,0];
+    function plusMinus(arr) {
+        let n = arr.length;
+        let countPositive=0;
+        let countNegative=0;
+        let countZero=0;
+        for(let i=0;i<n;i++)
+        {
+            if(arr[i]>0)
+            {
+                countPositive++;
+            }
+            else if(arr[i]<0)
+            {
+                countNegative++;
+            }
+            else
+            {
+                countZero++;
+            }
+        }
+        let p=parseFloat(countPositive/n).toFixed(6);
+        let ne=parseFloat(countNegative/n).toFixed(6);;
+        let z=parseFloat(countZero/n).toFixed(6);
+        let arrEnd=[p,ne,z];
+        for (let i=0;i<arrEnd.length;i++)
+        {
+            document.write(arrEnd[i]);
+            document.write('<br>');
+        }
+    }
+plusMinus(arr);
+</script>
+</body>
+</html>
