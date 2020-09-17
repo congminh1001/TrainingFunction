@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Min Max SUM</title>
+</head>
+<body>
+<script>
+    let arrStart =[1,4,3,2,6,5,0];//0123456
+    function minMaxSum(arr)
+    {
+        let sumMin=0;
+        let sumMax=0;
+        let temp;
+        for(let i = 0; i < arr.length - 1; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for (let i=0;i<arr.length-1;i++)
+        {
+            sumMin=sumMin+arr[i];
+        }
+        for (let j=1;j<arr.length;j++)
+
+        {
+            sumMax =sumMax + arr[j];
+        }
+        document.write(sumMax);
+        document.write('<br>');
+        document.write(sumMin);
+    }
+    minMaxSum(arrStart)
+</script>
+
+</body>
+</html>
